@@ -1,13 +1,10 @@
-
-import java.util.InputMismatchException;
-
 import java.util.Scanner;
 
 public class Main {
     static Scanner sc=new Scanner(System.in);
   public static TeleBook teleBook =new TeleBook();
     public static void main(String[] args) {
-        teleBook = ReadAenWrite.read();
+        teleBook = ReadAndWrite.read();
 
 
         System.out.println("Ilosc zapisanych kontktow  " + teleBook.contackMap.size());
@@ -65,7 +62,7 @@ public class Main {
             }
         }
         private static void exit(){
-       ReadAenWrite.write(teleBook);
+       ReadAndWrite.write(teleBook);
        sc.close();
         }
 

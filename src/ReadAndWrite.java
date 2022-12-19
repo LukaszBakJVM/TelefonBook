@@ -7,7 +7,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 
-public class ReadAenWrite {
+public class ReadAndWrite {
     private static final  String filename = "contact.txt";
 
     public static void write(TeleBook teleBook) {
