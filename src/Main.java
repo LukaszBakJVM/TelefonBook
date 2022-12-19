@@ -1,12 +1,11 @@
-import java.io.IOException;
-import java.util.List;
+
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Main {
     static Scanner sc=new Scanner(System.in);
   public static TeleBook teleBook =new TeleBook();
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         teleBook=   ReadAenWrite.read();
 
 
@@ -26,7 +25,7 @@ do {
     switch (option){
         case ADD ->teleBook.addNewcotact();
 
-        case SCHERCH_BY_NAME -> bynumber();
+        case SCHERCH_BY_NAME -> teleBook.findContactByName();
 
         case REMOVE -> teleBook.removeContact();
         case ALL -> teleBook.all();
@@ -56,14 +55,10 @@ do {
        ReadAenWrite.write(teleBook);
        sc.close();
         }
-        private static void bynumber(){
-            System.out.println("podaj nazwe");
-            String name=sc.next().toUpperCase();
-            List<Contack>contacks=teleBook.findByName(name);
-            contacks.forEach(System.out::println);
+
         }
 
-    }
+
 
 
     enum Option{

@@ -15,7 +15,7 @@ public class ReadAenWrite {
                 var file =new FileWriter(filename);
                 var buffer=new BufferedWriter(file)
                 ){
-            for (Contack c:teleBook
+            for (Contacts c:teleBook
                  ) {
                 buffer.write(c.toCSV());
                 buffer.newLine();
@@ -31,10 +31,10 @@ public class ReadAenWrite {
                 var file=new FileReader(filename);
                 var buffer=new BufferedReader(file)
                 ){
-            Map<String,Contack>contackMap=buffer.lines()
+            Map<String, Contacts>contackMap=buffer.lines()
                     .map(lines->lines.split(" "))
-                    .map(split->new Contack(split[0],split[1],Integer.parseInt(split[2])))
-                    .collect(Collectors.toMap(Contack::key,Function.identity()));
+                    .map(split->new Contacts(split[0],split[1],Integer.parseInt(split[2])))
+                    .collect(Collectors.toMap(Contacts::key,Function.identity()));
 
 return new TeleBook(new HashMap<>(contackMap));
         } catch (FileNotFoundException e) {

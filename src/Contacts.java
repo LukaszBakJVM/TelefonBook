@@ -1,18 +1,17 @@
-import java.util.Iterator;
 import java.util.Objects;
 
-public class Contack {
+public class Contacts {
     private String firstName;
     private String lastName;
-    private int telephnNumber;
+    private int telephonNumber;
 
-    public Contack() {
+    public Contacts() {
     }
 
-    public Contack(String firstName, String lastName, int telephnNumber) {
+    public Contacts(String firstName, String lastName, int telephonNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.telephnNumber = telephnNumber;
+        this.telephonNumber = telephonNumber;
     }
 
     public String getFirstName() {
@@ -31,12 +30,12 @@ public class Contack {
         this.lastName = lastName;
     }
 
-    public int getTelephnNumber() {
-        return telephnNumber;
+    public int getTelephonNumber() {
+        return telephonNumber;
     }
 
-    public void setTelephnNumber(int telephnNumber) {
-        this.telephnNumber = telephnNumber;
+    public void setTelephonNumber(int telephonNumber) {
+        this.telephonNumber = telephonNumber;
     }
 
     @Override
@@ -44,24 +43,24 @@ public class Contack {
         return
                 "Imie: " + firstName +
                         "   Nazwisko: " + lastName +
-                        "   Numer telefonu:  " + telephnNumber;
+                        "   Numer telefonu:  " + telephonNumber;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Contack contack = (Contack) o;
-        return telephnNumber == contack.telephnNumber && Objects.equals(firstName, contack.firstName) && Objects.equals(lastName, contack.lastName);
+        Contacts contacts = (Contacts) o;
+        return telephonNumber == contacts.telephonNumber && Objects.equals(firstName, contacts.firstName) && Objects.equals(lastName, contacts.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, telephnNumber);
+        return Objects.hash(firstName, lastName, telephonNumber);
     }
 
     public String toCSV() {
-        return firstName + " " + lastName + " " + telephnNumber;
+        return firstName + " " + lastName + " " + telephonNumber;
     }
     String key(){
         return firstName+lastName;
