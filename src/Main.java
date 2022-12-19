@@ -49,7 +49,7 @@ public class Main {
 
                 error = false;
 
-            } catch (WrongOption | InputMismatchException e) {
+            } catch (WrongOption  e) {
                 System.out.println(e.getMessage());
 
             }
